@@ -35,10 +35,10 @@ const Dashboard = () => {
       {/* Main Content */}
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-3 py-2 sm:px-6 lg:px-8" style={{ maxWidth: 'min(900px, calc(100vw - 3rem))', width: '100%', boxSizing: 'border-box' }}>
         <div className="mt-[30px] mb-6 text-center">
-          <h1 className="mb-0 px-2 font-semibold text-white text-[clamp(26px,4vw,34px)] leading-tight">
+          <h1 className="mb-0 px-2 font-semibold text-white text-[clamp(23px,4vw,34px)] leading-tight">
             IPO Readiness Assessment
           </h1>
-          <p className="-mt-1 px-2 text-white/80 text-[clamp(14px,2.6vw,18px)]">
+          <p className="-mt-1 px-2 text-white/80 text-[clamp(12px,2.6vw,18px)]">
             Quick check for IPO readiness and compliance
           </p>
         </div>
@@ -58,7 +58,7 @@ const Dashboard = () => {
                 />
               </div>
               <div className="flex-1 text-left mt-3">
-                <CardTitle className="font-semibold text-[#1d3f91] text-[clamp(18px,3.2vw,26px)] leading-tight">
+                <CardTitle className="font-semibold text-[#1d3f91] text-[clamp(17px,3.2vw,26px)] leading-tight">
                   Mainboard IPO
                 </CardTitle>
                 <CardDescription className="mt-0 text-[#445b9c] text-[clamp(10px,2.6vw,14px)]">
@@ -94,7 +94,7 @@ const Dashboard = () => {
                 />
               </div>
               <div className="flex-1 text-left mt-3">
-                <CardTitle className="font-semibold text-[#1d3f91] text-[clamp(18px,3.2vw,26px)] leading-tight">
+                <CardTitle className="font-semibold text-[#1d3f91] text-[clamp(17px,3.2vw,26px)] leading-tight">
                   SME IPO
                 </CardTitle>
                 <CardDescription className="mt-0 text-[#445b9c] text-[clamp(10px,2.6vw,14px)]">

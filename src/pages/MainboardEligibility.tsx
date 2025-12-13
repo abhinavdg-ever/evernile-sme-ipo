@@ -117,10 +117,10 @@ const OptionBox = ({
       selected ? "border-evernile-red bg-[#0f2753] shadow-[0_0_0_3px_rgba(239,59,84,0.4)]" : ""
     }`}
   >
-    <span className="text-sm font-semibold uppercase tracking-wide text-white sm:text-base">
+    <span className="text-sm font-semibold uppercase tracking-wide text-white sm:text-base shrink-0">
       {letter}.
     </span>
-    <span className="flex-1 text-white">{text}</span>
+    <span className="flex-1 text-white break-words">{text}</span>
   </button>
 );
 
@@ -322,7 +322,7 @@ const MainboardEligibility = () => {
   };
 
   return (
-    <div className="flex flex-col bg-evernile-navy text-white" style={{ width: '100%', maxWidth: '100vw', minHeight: '100vh', overflowX: 'hidden', overflowY: 'auto', borderRadius: '12px' }}>
+    <div className="flex flex-col bg-evernile-navy text-white" style={{ width: '100%', maxWidth: '100vw', minHeight: '100vh', overflowX: 'hidden', overflowY: 'auto', borderRadius: '12px', wordBreak: 'break-word' }}>
       {/* Header */}
       <header className="sticky top-0 z-50 h-[73px] border-b border-white/30 bg-white">
         <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-6 sm:px-8" style={{ maxWidth: 'min(900px, 100vw)' }}>
@@ -347,14 +347,14 @@ const MainboardEligibility = () => {
         {!showReport && step < QUESTIONS.length && current ? (
           <div className="flex flex-1 flex-col items-center text-center">
             <div className="mt-[30px] mb-6 text-center">
-              <h1 className="mb-0 px-2 font-semibold text-white text-[clamp(26px,4vw,34px)] leading-tight">
+              <h1 className="mb-0 px-2 font-semibold text-white text-[clamp(23px,4vw,34px)] leading-tight break-words">
                 Mainboard IPO Readiness Assessment
               </h1>
-              <p className="-mt-1 px-2 text-white/80 text-[clamp(14px,2.6vw,18px)]">
+              <p className="-mt-1 px-2 text-white/80 text-[clamp(12px,2.6vw,18px)] break-words">
                 For larger companies targeting main stock exchanges
               </p>
             </div>
-            <h2 className="mt-[25px] text-2xl font-semibold sm:text-3xl">
+            <h2 className="mt-[25px] text-[23px] font-semibold sm:text-[29px] break-words px-2">
               {current.question}
             </h2>
             <div className="mt-3 flex w-full max-w-4xl items-center gap-3">
@@ -403,16 +403,18 @@ const MainboardEligibility = () => {
             </div>
           </div>
         ) : !showReport ? (
-          <div className="mt-[30px] flex flex-1 flex-col items-center text-center text-white">
+          <div className="flex flex-1 flex-col items-center text-center text-white">
             <div className="w-full max-w-4xl">
-              <div className="mb-6 text-center">
-                <h1 className="mb-0 px-2 font-semibold text-white text-[clamp(26px,4vw,34px)] leading-tight">Mainboard IPO Readiness Assessment</h1>
-                <p className="-mt-1 px-2 text-white/80 text-[clamp(14px,2.6vw,18px)]">
+              <div className="mt-[30px] mb-6 text-center">
+                <h1 className="mb-0 px-2 font-semibold text-white text-[clamp(23px,4vw,34px)] leading-tight break-words">
+                  Mainboard IPO Readiness Assessment
+                </h1>
+                <p className="-mt-1 px-2 text-white/80 text-[clamp(12px,2.6vw,18px)] break-words">
                   For larger companies targeting main stock exchanges
                 </p>
               </div>
               <div className="pt-[5px] space-y-6">
-              <h2 className="text-left text-[14px] font-semibold leading-snug text-white sm:text-[18px]">
+              <h2 className="text-left text-[12px] font-semibold leading-snug text-white sm:text-[18px] break-words">
                 Almost there! Please fill out few details & generate your IPO Readiness Assessment Report.
               </h2>
               <div className="text-left">
@@ -422,8 +424,8 @@ const MainboardEligibility = () => {
                 <div className="mt-2 h-[2px] w-full bg-white/40" />
               </div>
               <div className="space-y-5">
-                <div className="grid items-center gap-3 text-[10px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
-                  <Label htmlFor="name" className="text-[10px] text-white sm:text-xs">
+                <div className="grid items-center gap-3 text-left text-[11px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
+                  <Label htmlFor="name" className="text-left text-[11px] text-white sm:text-xs">
                     Your Name<span className="text-evernile-red">*</span>
                   </Label>
                   <Input
@@ -434,8 +436,8 @@ const MainboardEligibility = () => {
                     className="rounded-none border border-white/40 bg-transparent !text-xs text-white placeholder:!text-[10px] placeholder:text-white/40 sm:placeholder:!text-xs focus:border-evernile-red focus:ring-0 !sm:text-sm"
                   />
                 </div>
-                <div className="grid items-center gap-3 text-[10px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
-                  <Label htmlFor="email" className="text-[10px] text-white sm:text-xs">
+                <div className="grid items-center gap-3 text-left text-[11px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
+                  <Label htmlFor="email" className="text-left text-[11px] text-white sm:text-xs">
                     Email ID<span className="text-evernile-red">*</span>
                   </Label>
                   <Input
@@ -446,8 +448,8 @@ const MainboardEligibility = () => {
                     className="rounded-none border border-white/40 bg-transparent !text-xs text-white placeholder:!text-[10px] placeholder:text-white/40 sm:placeholder:!text-xs focus:border-evernile-red focus:ring-0 !sm:text-sm"
                   />
                 </div>
-                <div className="grid items-center gap-3 text-[10px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
-                  <Label htmlFor="phone" className="text-[10px] text-white sm:text-xs">
+                <div className="grid items-center gap-3 text-left text-[11px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
+                  <Label htmlFor="phone" className="text-left text-[11px] text-white sm:text-xs">
                     Mobile No.
                   </Label>
                   <Input
@@ -465,7 +467,7 @@ const MainboardEligibility = () => {
                   await saveAssessmentData();
                   await sendEmailReport();
                 }}
-                className="w-full rounded-none bg-evernile-red py-4 text-sm font-semibold text-white hover:bg-evernile-red/90"
+                className="w-full rounded-none bg-evernile-red py-4 text-[11px] font-semibold text-white hover:bg-evernile-red/90 break-words px-2 sm:text-sm sm:px-4"
               >
                 {isGeneratingReport ? (
                   <div className="flex items-center justify-center gap-2">
@@ -473,7 +475,7 @@ const MainboardEligibility = () => {
                     <span>Generating Report...</span>
                   </div>
                 ) : (
-                  "Generate & Email IPO Readiness Assessment Report"
+                  <span className="break-words whitespace-normal">Generate & Email IPO Readiness Assessment Report</span>
                 )}
               </Button>
               </div>
@@ -482,7 +484,7 @@ const MainboardEligibility = () => {
         ) : !showReport ? (
           <div className="mt-14 flex flex-1 flex-col items-center text-left">
             <div className="mt-6 w-full max-w-3xl space-y-6">
-              <h2 className="text-[16px] font-semibold leading-snug sm:text-[20px]">
+              <h2 className="text-[14px] font-semibold leading-snug sm:text-[20px] break-words">
                 Almost there! Please fill out few details & generate your IPO Readiness Assessment Report.
               </h2>
               <div>
@@ -492,8 +494,8 @@ const MainboardEligibility = () => {
                 <div className="mt-2 h-[2px] w-full bg-white/40" />
               </div>
               <div className="space-y-5">
-                <div className="grid items-center gap-3 text-[10px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
-                  <Label htmlFor="name" className="text-[10px] text-white sm:text-xs">
+                <div className="grid items-center gap-3 text-left text-[11px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
+                  <Label htmlFor="name" className="text-left text-[11px] text-white sm:text-xs">
                     Your Name<span className="text-evernile-red">*</span>
                   </Label>
                   <Input
@@ -504,8 +506,8 @@ const MainboardEligibility = () => {
                     className="rounded-none border border-white/40 bg-transparent !text-xs text-white placeholder:!text-[10px] placeholder:text-white/40 sm:placeholder:!text-xs focus:border-evernile-red focus:ring-0 !sm:text-sm"
                   />
                 </div>
-                <div className="grid items-center gap-3 text-[10px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
-                  <Label htmlFor="email" className="text-[10px] text-white sm:text-xs">
+                <div className="grid items-center gap-3 text-left text-[11px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
+                  <Label htmlFor="email" className="text-left text-[11px] text-white sm:text-xs">
                     Email ID<span className="text-evernile-red">*</span>
                   </Label>
                   <Input
@@ -516,8 +518,8 @@ const MainboardEligibility = () => {
                     className="rounded-none border border-white/40 bg-transparent !text-xs text-white placeholder:!text-[10px] placeholder:text-white/40 sm:placeholder:!text-xs focus:border-evernile-red focus:ring-0 !sm:text-sm"
                   />
                 </div>
-                <div className="grid items-center gap-3 text-[10px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
-                  <Label htmlFor="phone" className="text-[10px] text-white sm:text-xs">
+                <div className="grid items-center gap-3 text-left text-[11px] text-white sm:grid-cols-[180px_minmax(0,1fr)] sm:text-xs">
+                  <Label htmlFor="phone" className="text-left text-[11px] text-white sm:text-xs">
                     Mobile No.
                   </Label>
                   <Input
@@ -535,7 +537,7 @@ const MainboardEligibility = () => {
                   await saveAssessmentData();
                   await sendEmailReport();
                 }}
-                className="w-full rounded-none bg-evernile-red py-4 text-sm font-semibold text-white hover:bg-evernile-red/90"
+                className="w-full rounded-none bg-evernile-red py-4 text-[11px] font-semibold text-white hover:bg-evernile-red/90 break-words px-2 sm:text-sm sm:px-4"
               >
                 {isGeneratingReport ? (
                   <div className="flex items-center justify-center gap-2">
@@ -543,16 +545,16 @@ const MainboardEligibility = () => {
                     <span>Generating Report...</span>
                   </div>
                 ) : (
-                  "Generate & Email IPO Readiness Assessment Report"
+                  <span className="break-words whitespace-normal">Generate & Email IPO Readiness Assessment Report</span>
                 )}
               </Button>
             </div>
           </div>
         ) : (
-          <div className="mt-[30px] flex flex-1 flex-col items-center justify-start text-center">
+          <div className="flex flex-1 flex-col items-center justify-start text-center">
             <div className="w-full max-w-4xl space-y-4">
-              <div className="mb-4 text-center">
-                <h2 className="mb-0 px-2 font-semibold text-white text-[clamp(26px,4vw,34px)] leading-tight">
+              <div className="mt-[30px] mb-4 text-center">
+                <h2 className="mb-0 px-2 font-semibold text-white text-[clamp(23px,4vw,34px)] leading-tight break-words">
                   Mainboard IPO Readiness Assessment Report!
                 </h2>
               </div>
